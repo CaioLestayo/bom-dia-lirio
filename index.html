@@ -19,45 +19,86 @@ body{
 @media (max-width: 768px){
 
     .container{
-        width:95%;
-        padding:20px;
-        padding-top:100px;
-        padding-bottom:100px;
-    }
+    position:relative;
 
-    .canto{
-        width:70px;
-        height:70px;
-    }
+    background:white;
+    color:black;
 
-    .superior-esquerdo{
-        top:10px;
-        left:10px;
-    }
+    width:75%;
+    min-height:700px;
 
-    .superior-direito{
-        top:10px;
-        right:10px;
-    }
+    margin:auto;
+    padding:70px;
 
-    .inferior-esquerdo{
-        bottom:10px;
-        left:10px;
-    }
+    border-radius:25px;
 
-    .inferior-direito{
-        bottom:10px;
-        right:10px;
-    }
+    box-shadow:0 0 30px rgba(0,0,0,0.4);
+}
 
-    h1{
-        font-size:28px;
-        margin-top:0;
-    }
+button{
+    padding:15px 30px;
+    font-size:20px;
 
-    p{
-        font-size:18px;
-    }
+    border:none;
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:#f7b7c3;
+
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#resultado{
+    margin-top:30px;
+    font-size:22px;
+}
+
+.canto{
+    width:80px;
+    height:80px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    border:none;
+    box-shadow:none;
+}
+
+.superior-esquerdo{
+    top:20px;
+    left:20px;
+}
+
+.superior-direito{
+    top:20px;
+    right:20px;
+}
+
+.inferior-esquerdo{
+    bottom:20px;
+    left:20px;
+}
+
+.inferior-direito{
+    bottom:20px;
+    right:20px;
+}
+
+h1{
+    margin-top:10px;
+    font-size:52px;
+}
+
+p{
+    font-size:28px;
 
 }
 
