@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bom Dia 🌸</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    margin-top:50px;
+    background: linear-gradient(135deg,#4a0404,#7a0b0b);
+    color:white;
+}
+
+.container{
+    position:relative;
+    background:white;
+    color:black;
+    width:75%;
+    min-height:700px;
+    margin:auto;
+    padding:70px;
+    border-radius:25px;
+    box-shadow:0 0 30px rgba(0,0,0,0.4);
+}
+
+button{
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#f7b7c3;
+    margin:10px;
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#resultado{
+    margin-top:30px;
+    font-size:22px;
+}
+
+.canto{
+    width:140px;
+    height:140px;
+    object-fit:cover;
+    border-radius:50%;
+    position:absolute;
+}
+
+.superior-esquerdo{
+    top:50px;
+    left:50px;
+}
+
+.superior-direito{
+    top:50px;
+    right:50px;
+}
+
+.inferior-esquerdo{
+    bottom:50px;
+    left:50px;
+}
+
+.inferior-direito{
+    bottom:50px;
+    right:50px;
+}
+
+h1{
+    margin-top:20px;
+    font-size:52px;
+}
+
+p{
+    font-size:28px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="linda.jpg" class="canto superior-esquerdo">
+<img src="esposa.jpg" class="canto superior-direito">
+<img src="vamocasar.jpg" class="canto inferior-esquerdo">
+<img src="fofinha.jpg" class="canto inferior-direito">
+
+<h1>☀️ Sistema de Bom Dia v1.0</h1>
+
+<p>🌸 Carregando lírios...</p>
+<p>📚 Carregando livros...</p>
+<p>😊 Carregando risadas...</p>
+<p>❤️ Carregando saudades...</p>
+
+<h2 style="font-size:42px;">
+⚠️ ERRO DETECTADO
+</h2>
+
+<p>
+Quantidade de saudades acima do permitido.
+</p>
+
+<button onclick="resolver()">
+Resolver problema
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function resolver(){
+
+document.getElementById("resultado").innerHTML = `
+
+<h2 style="font-size:52px;">
+✅ Solução Encontrada
+</h2>
+
+<p>Após análise profunda do sistema...</p>
+
+<p>A única solução possível é:</p>
+
+<h3 style="font-size:48px;">
+🌸 Marcar outro encontro 🌸
+</h3>
+
+<p>☀️ Bom dia minha linda</p>
+
+<p>💕 Quero te ver de novo</p>
+
+<br>
+
+<h2>📅 Sábado às 17:00?</h2>
+
+<button onclick="alert('Boa escolha 😌🌸')">
+SIM
+</button>
+
+<button id="nao" onclick="nao()">
+NÃO
+</button>
+
+`;
+
+chuvaDeLirios();
+
+}
+
+function nao(){
+
+document.getElementById("nao").remove();
+
+document.getElementById("resultado").innerHTML += `
+<p style="margin-top:20px;font-size:24px;">
+❌ Opção NÃO disponível no momento.
+</p>
+`;
+
+}
+
+function chuvaDeLirios(){
+
+for(let i = 0; i < 80; i++){
+
+    const flor = document.createElement("div");
+
+    flor.innerHTML = "🌸";
+
+    flor.style.position = "fixed";
+    flor.style.left = Math.random() * 100 + "vw";
+    flor.style.top = "-100px";
+    flor.style.fontSize = (20 + Math.random() * 30) + "px";
+    flor.style.zIndex = "9999";
+    flor.style.pointerEvents = "none";
+
+    document.body.appendChild(flor);
+
+    let posY = -100;
+    let velocidade = 2 + Math.random() * 4;
+
+    const queda = setInterval(() => {
+
+        posY += velocidade;
+
+        flor.style.top = posY + "px";
+
+        if(posY > window.innerHeight + 100){
+            clearInterval(queda);
+            flor.remove();
+        }
+
+    }, 20);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
